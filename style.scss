@@ -1,0 +1,488 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+  ////////////////////////////////////////VARIABLES//////////////////////////////////
+  
+  $workBG:hsl(15, 100%, 70%);
+  $playBG:hsl(195, 74%, 62%);
+  $studyBG:hsl(348, 100%, 68%);
+  $exerciseBG:hsl(145, 58%, 55%);
+  $socialBG: hsl(264, 64%, 52%);
+  $selfCareBG:hsl(43, 84%, 65%);
+  
+  
+  $primaryColor:hsl(246, 80%, 60%);
+  
+  $neutral-400:hsl(226, 43%, 10%);
+  $neutral-500:hsl(235, 46%, 20%);
+  $neutral-600: hsl(235, 45%, 61%);
+  $neutral-700:hsl(236, 100%, 87%);
+  $neutral-900:white;
+  
+
+
+  ///////////////////////////////////////Content//////////////////////////////////
+  body{
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: $neutral-400;
+    color: $neutral-700;
+    align-items: center;
+    justify-items: center;
+    font-size: 16px;
+  }
+
+
+.gridWrapper{
+    width: clamp(70vw, 1440px, 90vw);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px 15px;
+    grid-template-areas: 
+    "options work play study"
+    "options exercise social selfcare ";
+    margin-block: auto;
+}
+.tab{
+    border-radius: 30px;
+    background-color: white;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    h1{
+        padding-inline: 10%;
+        font-size: clamp(3rem, 10vw, 5rem);
+        font-weight: 500;
+        color:$neutral-900 ;
+        
+    }
+    h6{
+        padding-inline: 10%;
+        font-size: clamp(0.5rem, 1vw, 2rem);
+        font-weight: 400;
+        margin: 0;
+    }
+}
+.options{
+    grid-area: options;
+    background-color: $neutral-500;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.personalInfo{
+    height: 70%;
+    background-color: $primaryColor;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    h1{
+        color: $neutral-900;
+        font-size: clamp(3rem, 3vw, 5rem);
+        font-weight: 300;
+        
+    }
+    h5{
+        font-weight: 400;
+        font-size: clamp(1rem, 1vw, 2rem);
+        margin: 0;
+        margin-top: 10%;
+        padding-block:2% ;
+    }
+}
+.profilePicture{
+    width: 40% ;
+    
+    
+    aspect-ratio: 1 / 1;
+    border: 3px solid $neutral-900;
+    border-radius: 50%;
+}
+.dateSwapper{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10%;
+    
+    
+    
+    h3{
+        color: $neutral-700;
+        width: fit-content;
+        padding: 3%;
+        font-weight: 300;
+        &:hover{
+            color: $neutral-900;
+            cursor: pointer;
+        }
+        
+    }
+}
+#dailyButton{
+    color: $neutral-900;
+}
+.colorLayer{
+    width: 100%;
+    height: 20%;
+    border-radius: 30px;
+    position: relative;
+    
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: 90% 20% ;
+    
+}
+.info{
+    flex-grow: 1;
+    background-color: $neutral-500;
+    border-radius: 25px;
+    z-index: 1;
+    &:hover{
+        background-color: $neutral-600;
+        cursor: pointer;
+    }
+    h1{
+        font-weight: 300;
+    }
+}
+.categoryWrapper{
+    width: 100%;
+    padding: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        width: 12%;
+        height: calc(10%/4.25);
+        &:hover{
+            fill: red ;
+            cursor: pointer;
+        }
+    }
+    
+    h4{
+        font-size: clamp(1rem, 1vw, 2rem);
+        font-weight:400 ;
+        color:$neutral-900 ;
+    }
+}
+
+#work{
+    grid-area: work;
+    background-color: $workBG   ;
+    .colorLayer{
+        background-color: $workBG;
+        background-image: url(images/icon-work.svg);
+    }
+    
+}
+
+#play{
+    grid-area: play;
+    background-color: $playBG;
+    .colorLayer{
+        background-color: $playBG;
+        background-image: url(images/icon-play.svg);
+    }
+}
+
+#study{
+    grid-area: study;
+    background-color: $studyBG;
+    .colorLayer{
+        background-color: $studyBG;
+        background-image: url(images/icon-study.svg);
+    }
+}
+
+#exercise{
+    grid-area: exercise;
+    background-color: $exerciseBG;
+    .colorLayer{
+        background-color: $exerciseBG;
+        background-image: url(images/icon-exercise.svg);
+        
+    }
+}
+
+#social{
+    grid-area: social;
+    background-color: $socialBG;
+    .colorLayer{
+        background-color: $socialBG;
+        background-image: url(images/icon-social.svg);
+    }
+}
+
+#selfcare{
+    grid-area: selfcare;
+    background-color: $selfCareBG;
+    .colorLayer{
+        background-color: $selfCareBG;
+        background-image: url(images/icon-self-care.svg);
+    }
+}
+
+
+@media only screen and(max-width:600px){
+    .gridWrapper{
+        display: flex;
+        flex-direction: column;
+        margin-block: 10%;
+    }
+    .personalInfo{
+        display: flex;
+        flex-direction: row;
+        img{
+            width: 30%;
+            height: 30%;
+            padding: 0;
+        }
+    }
+    .dateSwapper{
+        flex-direction: row;
+        padding: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .mobileSpan{
+
+        
+        padding-left:10% ;
+        
+        h5{
+            font-size: clamp(0.5rem, 4vw, 2rem);
+        }
+        h1{
+            font-size: clamp(1rem, 6vw, 3rem);
+            width: 100%;
+        }
+    }
+
+
+    .tab{
+        aspect-ratio: 2/1;
+        .colorLayer{
+            min-height: 25%;
+            border: 0;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        margin-block:10% ;
+        .categoryWrapper{
+            padding-inline: 10%;
+            padding-bottom: 0;
+        }
+        .mobileInfo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 5%;
+            padding-inline:10% ;
+            h1{
+                padding: 0;
+                font-size: clamp(1rem, 10vw, 2rem);
+            }
+            h6{
+                padding: 0;
+                text-align: right;
+                font-size: clamp(0.5rem, 4vw, 2rem);
+            }
+        }
+    }
+}
+@media only screen and(min-width:600px)and (max-width:800px){
+    .gridWrapper{
+        display: flex;
+        flex-direction: column;
+        margin-block: 10%;
+    }
+    .personalInfo{
+        display: flex;
+        flex-direction: row;
+        img{
+            width: 30%;
+            height: 30%;
+            padding: 0;
+        }
+    }
+    .dateSwapper{
+        flex-direction: row;
+        padding: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .mobileSpan{
+
+        
+        padding-left:10% ;
+        
+        h5{
+            font-size: clamp(0.5rem, 4vw, 2rem);
+        }
+        h1{
+            font-size: clamp(1rem, 6vw, 3rem);
+            width: 100%;
+        }
+    }
+
+
+    .tab{
+        aspect-ratio: 2/1;
+        .colorLayer{
+            min-height: 25%;
+            border: 0;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        margin-block:10% ;
+        .categoryWrapper{
+            padding-inline: 10%;
+            padding-bottom: 0;
+            h4{
+                font-size: clamp(1rem, 4vw, 2rem);
+            }
+        }
+        .mobileInfo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 5%;
+            padding-inline:10% ;
+            h6{
+                padding: 0;
+                text-align: right;
+                font-size: clamp(0.5rem, 4vw, 2rem);
+            }
+        }
+    }
+
+    .mobileInfo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 5%;
+        padding-inline:10% ;
+        h1{
+            
+            padding: 0;
+            padding-block: 5%;
+            font-size: clamp(2rem, 20vw, 5rem);
+        }
+    }
+}
+
+@media only screen and(min-width:800px)and (max-width:1300px){
+    .gridWrapper{
+        margin-inline:10%;
+    }
+    .options{
+        h1{
+            font-size: clamp(2rem, 4vw, 4rem);
+            width: min-content;
+        }
+        .dateSwapper{
+        h3{
+            font-size: clamp(0.5rem, 1.5vw, 3rem);
+        }
+        }
+    }
+    .tab{
+        h1{
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+        .colorLayer{
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}

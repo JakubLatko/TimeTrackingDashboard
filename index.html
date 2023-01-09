@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Time tracking dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="gridWrapper">
+    <div class="options">
+      <div class="personalInfo">
+        <img class="profilePicture" src="images/image-jeremy.png">
+        <div class="mobileSpan">
+          <h5>Report for</h5>
+          <h1>Jeremy Robson</h1>
+        </div>
+        
+      </div>
+      <div class="dateSwapper">
+        <h3 id="dailyButton">Daily</h3>
+        <h3 id="weeklyButton">Weekly</h3>
+        <h3 id="monthlyButton">Monthly</h3>
+      </div>
+    </div>
+    <div class="tab" id="work">
+      <div class="colorLayer"></div>
+      <div class="info">
+        <div class="categoryWrapper">
+          <h4>Work</h4>
+          <img src="images/icon-ellipsis.svg">
+        </div>
+        <div class="mobileInfo"> 
+          <h1 id="workMeter">5hrs</h1>
+          <h6 id="workPrevious">Previous - 7hrs</h6>
+        </div>
+       
+      </div>
+    </div> 
+    <div class="tab" id="play">
+      <div class="colorLayer"></div>
+      <div class="info">
+        <div class="categoryWrapper">
+          <h4>Play</h4>
+          <img src="images/icon-ellipsis.svg">
+        </div>
+        <div class="mobileInfo"> 
+          <h1 id="playMeter">1hr</h1>
+          <h6 id="playPrevious">Previous - 2hrs</h6>
+        </div>
+      </div>
+    </div>
+    <div class="tab" id="study">
+      <div class="colorLayer"></div>
+      <div class="info">
+        <div class="categoryWrapper">
+          <h4>Study</h4> 
+          <img src="images/icon-ellipsis.svg">
+        </div>
+        <div class="mobileInfo"> 
+          <h1 id="studyMeter">0hrs</h1> 
+          <h6 id="studyPrevious">Previous - 1hr</h6> 
+        </div>
+      </div>
+    </div>
+    <div class="tab" id="exercise">
+      <div class="colorLayer"></div>
+      <div class="info">
+        <div class="categoryWrapper">
+          <h4>Exercise</h4>
+          <img src="images/icon-ellipsis.svg">
+        </div>
+        <div class="mobileInfo"> 
+          <h1 id="exerciseMeter">1hr</h1> 
+          <h6 id="exercisePrevious">Previous - 1hr</h6> 
+        </div>
+      </div>
+    </div>
+      <div class="tab" id="social">
+        <div class="colorLayer"></div>
+        <div class="info">
+          <div class="categoryWrapper">
+            <h4>Social</h4>
+            <img src="images/icon-ellipsis.svg">
+          </div>
+          <div class="mobileInfo"> 
+            <h1 id="socialMeter">1hr</h1> 
+            <h6 id="socialPrevious">Previous - 3hrs</h6> 
+          </div>
+        </div>
+    </div>
+    <div class="tab" id="selfcare">
+      <div class="colorLayer"></div>
+      <div class="info">
+        <div class="categoryWrapper">
+          <h4>Self Care</h4>
+          <img src="images/icon-ellipsis.svg">
+        </div>
+        <div class="mobileInfo"> 
+          <h1 id="selfcareMeter">0hrs</h1> 
+          <h6 id="selfcarePrevious">Previous - 1hr</h6> 
+        </div>
+      </div>  
+    </div>
+  </div>
+</body>
+</html>
